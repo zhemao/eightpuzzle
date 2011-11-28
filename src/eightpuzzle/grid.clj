@@ -52,6 +52,9 @@
         (nil? (tile-value tiles (vec pos)))) 
       positions)))))
 
-(defn print-grid [grid]
-  (doseq [row (:tiles grid)] 
+(defn print-tiles [tiles]
+  (doseq [row tiles] 
     (apply println row)))
+
+(defn print-grid [grid]
+  (print-tiles (:tiles grid)))
