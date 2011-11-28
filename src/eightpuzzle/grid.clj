@@ -51,3 +51,7 @@
       (fn [pos] 
         (nil? (tile-value tiles (vec pos)))) 
       positions)))))
+
+(defn print-grid [grid]
+  (doseq [row (:tiles grid)] 
+    (apply println row)))

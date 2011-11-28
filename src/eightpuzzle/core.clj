@@ -29,5 +29,5 @@
   (let [start [[3 6 1] [nil 8 2] [4 5 7]]
         solution (solve-puzzle start)]
     (println "Solved Puzzle!")
-    (println solution)))
+    (print-grid solution)))
 
