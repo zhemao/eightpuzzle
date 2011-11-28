@@ -6,7 +6,7 @@
   (+ (:g grid) (:h grid)))
 
 (defn final-pos [x n]
-  [(/ (dec x) n)
+  [(floor (/ (dec x) n))
    (mod (dec x) n)])
 
 (defn manhattan-distance [apos bpos]
