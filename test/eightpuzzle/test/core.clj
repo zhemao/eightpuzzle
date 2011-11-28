@@ -1,5 +1,5 @@
 (ns eightpuzzle.test.core
-  (:use [eightpuzzle.core] [eightpuzzle.grid])
+  (:use [eightpuzzle.core] [eightpuzzle.grid] [eightpuzzle.queue])
   (:use [clojure.test]))
 
 (deftest calc-h-test
@@ -30,3 +30,11 @@
 (deftest branch-grid-test
   (let [tiles [[1 2 3] [4 nil 6] [7 8 5]]]
     (println (branch-grid (make-grid tiles 0)))))
+
+(deftest grid-queue-test
+  (let [grid1 (make-grid [[1 2 3] [4 5 6] [7 8 nil]] 0)
+        grid2 (make-grid [[1 2 3] [4 5 6] [7 nil 8]] 0)
+        queue (make-grid-queue [grid1 grid2])]
+    (is (= grid1 (first-grid queue)))
+    (println (pop queue))))
+    
